@@ -4,14 +4,9 @@ import { CRUD_REPOSITORY } from './generic-crud-repository.service.interface';
 import { ENTITY_TARGET } from './generic-crud-repository.service';
 export const DATA_SOURCE = 'DATA_SOURCE';
 
-
 @Module({
-    imports: [],
-    providers: [
-        ...CRUDProviders,],
-    exports: [
-        CRUD_REPOSITORY, ENTITY_TARGET
-    ]
-
+  imports: [],
+  providers: [...CRUDProviders],
+  exports: [CRUD_REPOSITORY, ENTITY_TARGET],
 })
-export class CRUDRepositotyModule { }
+export class CRUDRepositotyModule {}

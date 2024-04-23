@@ -6,10 +6,9 @@ import { CRUDRepositotyModule } from '../generic-crud-repository/generic-crud-re
 import { CloudinaryModule } from '../cloudinary/cloudinary.module';
 
 @Module({
-    imports: [CRUDRepositotyModule, CloudinaryModule],
-    controllers: [UserController],
-    providers: [...UserProviders],
-    exports: [USER_SERVIVE]
-
+  imports: [CRUDRepositotyModule, CloudinaryModule],
+  controllers: [UserController],
+  providers: [...UserProviders],
+  exports: [USER_SERVIVE],
 })
-export class UserModule { }
+export class UserModule {}

@@ -1,12 +1,11 @@
-import { User } from "../user/user.entity";
-
-export const CRUD_REPOSITORY = 'CRUD_REPOSITORY'
+export const CRUD_REPOSITORY = 'CRUD_REPOSITORY';
 export interface ICRUDRepositoty<T> {
-
-    findAll(alias: string, params: { itemsPerPage: number; page: number; keyword: string }): Promise<{ data: T[]; count: number }>;
-    findById(alias: string, id: number): Promise<T>;
-    deleteItem(alias: string, id: number): Promise<number>;
-    createItem(alias: string, item: Partial<T>): Promise<T>;
-    updateItem(alias: string, id: number, item: Partial<T>): Promise<T>;
-
+  findAll(
+    alias: string,
+    params: { itemsPerPage: number; page: number; keyword: string },
+  ): Promise<{ data: T[]; count: number }>;
+  findById(alias: string, id: number): Promise<T>;
+  deleteItem(alias: string, id: number): Promise<number>;
+  createItem(alias: string, item: Partial<T>): Promise<T>;
+  updateItem(alias: string, id: number, item: Partial<T>): Promise<T>;
 }
