@@ -1,15 +1,7 @@
-import {
-  DataSource,
-  Entity,
-  EntityManager,
-  EntityMetadata,
-  EntityTarget,
-  Repository,
-} from 'typeorm';
+import { DataSource, EntityManager, EntityTarget, Repository } from 'typeorm';
 import { ICRUDRepositoty } from './generic-crud-repository.service.interface';
 import { QueryDeepPartialEntity } from 'typeorm/query-builder/QueryPartialEntity';
 import { Inject, Injectable } from '@nestjs/common';
-import { User } from '../user/user.entity';
 export const ENTITY_TARGET = 'DATA_SOURCE';
 @Injectable()
 export class CRUDRepositoty<T>

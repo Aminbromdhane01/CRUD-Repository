@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './module/user/user.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { BookModule } from './module/book/book.module';
+import { SentimentalAnalysisModule } from './module/sentimental-analysis/sentimental-analysis.module';
 @Module({
   imports: [
     MulterModule.register({
@@ -20,6 +21,7 @@ import { BookModule } from './module/book/book.module';
     }),
     UserModule,
     BookModule,
+    SentimentalAnalysisModule,
   ],
 })
 export class AppModule {}
