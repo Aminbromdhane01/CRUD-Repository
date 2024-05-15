@@ -7,11 +7,16 @@ export class SentimentAnalysisController {
     private readonly sentimentAnalysisService: SentimentAnalysisService,
   ) {}
 
-  @Post('analyze')
+  /*@Post('analyze')
   async analyzeComment(@Body() body: { comment: string }) {
     const { comment } = body;
     const analysisResult =
       await this.sentimentAnalysisService.analyzeComment(comment);
     return analysisResult;
+  }*/
+  @Post('analyze-toxicity')
+  async analyseToxicity(@Body() body: { comment: string }) {
+    const { comment } = body;
+    return this.sentimentAnalysisService.classifyToxicity(comment);
   }
 }

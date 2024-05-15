@@ -30,4 +30,19 @@ export class UserReposotiroy
   async getUserbyid(id: number): Promise<User> {
     return this.findById('User', id);
   }
+  async findUseWishlist(id: number): Promise<any> {
+    /*  return this.findOne({
+      relations: {
+        wishlist: true,
+      },
+      where: { id: id },
+    });*/
+    return this.createQueryBuilder('user')
+      .leftJoinAndSelect('user.wishlist', 'wishlist')
+      .where('user.id = :id', { id })
+      .getOne();
+  }
+  async saveUser(user: User): Promise<User> {
+    return this.save(user);
+  }
 }

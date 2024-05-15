@@ -7,6 +7,7 @@ import {
   Inject,
   UseInterceptors,
   UploadedFile,
+  Param,
 } from '@nestjs/common';
 import { CreateBookDto } from './dto/create.book.dto';
 import { GetBookDto } from './dto/get.book.dto';
@@ -31,5 +32,9 @@ export class BookController {
     @Query() getBookDto: GetBookDto,
   ): Promise<{ data: Book[]; count: number }> {
     return await this.bookService.getAll(getBookDto);
+  }
+  @Get('whislist/:id')
+  async getWishlist(@Param('id') id, @Body() bookId: number): Promise<any> {
+    return this.bookService.addToWishlist(id, bookId);
   }
 }

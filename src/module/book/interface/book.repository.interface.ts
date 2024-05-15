@@ -10,4 +10,5 @@ export interface IBookRepository {
     page,
     keyword,
   }: GetBookDto): Promise<{ data: Book[]; count: number }>;
+  findBookByID(id: number): Promise<Book>;
 }

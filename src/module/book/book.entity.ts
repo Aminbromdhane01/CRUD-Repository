@@ -2,10 +2,13 @@ import {
   Column,
   Entity,
   JoinColumn,
+  ManyToMany,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { User } from '../user/user.entity';
+import { Comment } from '../comment/entities/comment.entity';
 
 @Entity()
 export class Book {
@@ -28,4 +31,8 @@ export class Book {
   @ManyToOne(() => User, (user) => user.books)
   @JoinColumn()
   user: User;
+  @ManyToMany(() => User, (user) => user.wishlist)
+  wishlistOwners: User[];
+  @OneToMany(() => Comment, (comment) => comment.book)
+  comments: Comment[];
 }

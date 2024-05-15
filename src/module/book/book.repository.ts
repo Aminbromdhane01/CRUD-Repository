@@ -28,4 +28,7 @@ export class BookReposotiroy
       keyword: keyword,
     });
   }
+  findBookByID(id: number): Promise<Book> {
+    return this.findById('Book', id);
+  }
 }

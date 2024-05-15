@@ -5,4 +5,6 @@ export interface IUserRepository {
   createUser(user: UserDto): Promise<User>;
   getAll(): Promise<{ data: User[]; count: number }>;
   getUserbyid(id: number): Promise<User>;
+  findUseWishlist(id: number): Promise<any>;
+  saveUser(user: User): Promise<User>;
 }

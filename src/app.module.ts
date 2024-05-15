@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './module/user/user.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { BookModule } from './module/book/book.module';
+import { CommentModule } from './module/comment/comment.module';
 import { SentimentalAnalysisModule } from './module/sentimental-analysis/sentimental-analysis.module';
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { SentimentalAnalysisModule } from './module/sentimental-analysis/sentime
     }),
     UserModule,
     BookModule,
+    CommentModule,
     SentimentalAnalysisModule,
   ],
 })

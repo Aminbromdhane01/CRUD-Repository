@@ -10,4 +10,5 @@ export interface IBookService {
     page,
     keyword,
   }: GetBookDto): Promise<{ data: Book[]; count: number }>;
+  addToWishlist(userId: number, bookId: number): Promise<any>;
 }
